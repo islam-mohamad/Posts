@@ -56,4 +56,7 @@ dependencies {
 
     //Picasso
     api "com.squareup.picasso:picasso:$picassoVersion"
+
+    implementation 'junit:junit:4.13.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4'
 }
