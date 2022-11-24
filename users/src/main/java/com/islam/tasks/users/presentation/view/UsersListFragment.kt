@@ -27,11 +27,11 @@ class UsersListFragment : Fragment() {
     private val viewModel by viewModels<UsersViewModel>()
 
     @Inject
-    private lateinit var router: UsersListNav
+    lateinit var router: UsersListNav
 
     private val adapter: UsersAdapter by lazy {
         UsersAdapter {
-            router.navigateToPosts()
+            router.navigateToPosts(activity, it)
         }
     }
 
@@ -40,12 +40,12 @@ class UsersListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentUsersListBinding.inflate(inflater, container, false)
+        initViews()
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        initViews()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         render()
         initActions()
     }
