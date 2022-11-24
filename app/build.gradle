@@ -53,4 +53,5 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:$hiltVersion"
 
     implementation(project(":core"))
+    implementation(project(":users"))
 }

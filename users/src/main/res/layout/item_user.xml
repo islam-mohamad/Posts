@@ -45,20 +45,30 @@
             tools:text="Islam Mohamed Mahmoud" />
 
         <TextView
+            android:id="@+id/posts_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="monospace"
+            android:text="@string/post_count"
+            android:textColor="#446bfc"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/user_iv"
+            app:layout_constraintStart_toEndOf="@id/user_iv"
+            app:layout_constraintTop_toBottomOf="@+id/name_tv" />
+
+        <TextView
             android:id="@+id/posts_count_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:ellipsize="end"
             android:fontFamily="monospace"
-            android:maxLines="1"
             android:textColor="#446bfc"
             android:textSize="16sp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="@id/user_iv"
+            app:layout_constraintBottom_toBottomOf="@id/posts_label_tv"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/user_iv"
-            app:layout_constraintTop_toBottomOf="@+id/name_tv"
+            app:layout_constraintStart_toEndOf="@id/posts_label_tv"
+            app:layout_constraintTop_toTopOf="@+id/posts_label_tv"
             tools:text="10 Posts" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

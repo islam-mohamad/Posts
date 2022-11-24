@@ -13,17 +13,18 @@ class UserRepositoryImpl @Inject constructor(private var api: UserApi) : UserRep
     override suspend fun getUsers(): List<UserEntity> {
         val users = api.getUsersAsync()
         val usersPosts = api.getPostsAsync()
-        return merge(users.await(), usersPosts.await())
+        val asd = merge(users.await(), usersPosts.await())
+        return asd
     }
 
     private fun merge(users: List<UserModel>, posts: List<PostModel>): List<UserEntity> {
-        posts.sortedBy { it.userId }
+        val sortPosts = posts.sortedBy { it.userId }
         var index = 0
         return users.map { user ->
             val userPosts = mutableListOf<PostEntity>()
-            while (index < posts.size) {
-                if (posts[index].userId == user.userId) {
-                    userPosts.add(posts[index].toEntity())
+            while (index < sortPosts.size) {
+                if (sortPosts[index].userId == user.userId) {
+                    userPosts.add(sortPosts[index].toEntity())
                 } else {
                     break
                 }
