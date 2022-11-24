@@ -16,3 +16,4 @@ rootProject.name = "Floawrd"
 include ':app'
 include ':core'
 include ':users'
+include ':posts'
