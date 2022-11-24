@@ -6,5 +6,5 @@ sealed class UsersViewState {
     object Idle : UsersViewState()
     object Loading : UsersViewState()
     data class Success(val usersList: List<UserUiModel>) : UsersViewState()
-    data class Error(val error: String) : UsersViewState()
+    data class Error(val error: String?) : UsersViewState()
 }

@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.islam.tasks.core.makeGone
 import com.islam.tasks.core.makeVisible
+import com.islam.tasks.users.R
 import com.islam.tasks.users.databinding.FragmentUsersListBinding
 import com.islam.tasks.users.presentation.intent.UsersIntent
 import com.islam.tasks.users.presentation.state.UsersViewState
@@ -66,7 +67,11 @@ class UsersListFragment : Fragment() {
                     }
                     is UsersViewState.Error -> {
                         binding.loadingPb.makeGone()
-                        Toast.makeText(context, it.error, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            context,
+                            it.error ?: getString(R.string.something_wrong),
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                     UsersViewState.Idle -> {
 

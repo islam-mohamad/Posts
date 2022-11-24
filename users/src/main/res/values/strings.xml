@@ -1,3 +1,4 @@
 <resources>
     <string name="post_count">Post Count: </string>
+    <string name="something_wrong">Something went wrong !</string>
 </resources>

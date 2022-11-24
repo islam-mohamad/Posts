@@ -44,7 +44,7 @@ class UsersViewModel @Inject constructor(private val getUsersUseCase: GetUsersUs
                 val userList = getUsersUseCase()
                 UsersViewState.Success(userList.map { it.toUiModel() })
             } catch (e: Exception) {
-                UsersViewState.Error(e.message!!)
+                UsersViewState.Error(e.message)
             }
         }
     }
