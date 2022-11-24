@@ -59,4 +59,5 @@ dependencies {
 
     testImplementation "junit:junit:$jUnitVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTestVersion"
+    api "androidx.datastore:datastore-preferences:1.0.0"
 }

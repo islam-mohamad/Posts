@@ -51,6 +51,7 @@ dependencies {
     //Hilt
     implementation "com.google.dagger:hilt-android:$hiltVersion"
     kapt "com.google.dagger:hilt-compiler:$hiltVersion"
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
 
     implementation(project(":core"))
     implementation(project(":users"))

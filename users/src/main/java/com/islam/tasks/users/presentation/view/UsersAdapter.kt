@@ -9,7 +9,7 @@ import com.islam.tasks.users.databinding.ItemUserBinding
 import com.islam.tasks.users.presentation.uimodel.UserUiModel
 import com.squareup.picasso.Picasso
 
-class UsersAdapter(private val itemClick: (Int) -> Unit) :
+class UsersAdapter(private val itemClick: (UserUiModel) -> Unit) :
     ListAdapter<UserUiModel, UsersAdapter.UserViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
@@ -21,14 +21,14 @@ class UsersAdapter(private val itemClick: (Int) -> Unit) :
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val item = getItem(position)
         holder.bind(item)
-        holder.itemView.setOnClickListener { itemClick(item.id) }
+        holder.itemView.setOnClickListener { itemClick(item) }
     }
 
     class UserViewHolder(private val binding: ItemUserBinding) : ViewHolder(binding.root) {
         fun bind(item: UserUiModel) = with(binding) {
             nameTv.text = item.name
             postsCountTv.text = item.postsCount.toString()
-            Picasso.get().load(item.url).fit().into(userIv)
+            Picasso.get().load(item.thumbnailUrl).fit().into(userIv)
         }
     }
 
