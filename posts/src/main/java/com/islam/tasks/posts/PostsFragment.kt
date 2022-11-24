@@ -12,10 +12,13 @@ class PostsFragment : Fragment() {
         arguments?.getInt(USER_ID_KEY)
     }
 
+    private lateinit var binding: FragmentPostsBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_posts, container, false)
+    ): View {
+        binding = FragmentPostsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     companion object {
