@@ -16,6 +16,7 @@ import com.islam.tasks.users.presentation.intent.UsersIntent
 import com.islam.tasks.users.presentation.state.UsersViewState
 import com.islam.tasks.users.presentation.viewmodel.UsersViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
@@ -25,9 +26,12 @@ class UsersListFragment : Fragment() {
 
     private val viewModel by viewModels<UsersViewModel>()
 
+    @Inject
+    private lateinit var router: UsersListNav
+
     private val adapter: UsersAdapter by lazy {
         UsersAdapter {
-
+            router.navigateToPosts()
         }
     }
 
