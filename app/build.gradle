@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace 'com.islam.tasks.floawrd'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.islam.tasks.floawrd"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
